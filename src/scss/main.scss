@@ -5,8 +5,16 @@
 
 @import 'common/global';
 
+@import 'common/buttons';
+
 @import 'common/header';
 
 @import 'common/popup';
 
 @import 'common/footer';
+
+// --- PAGES ---
+@import 'pages/01-hero';
+@import 'pages/02-about';
+@import 'pages/03-services';
+@import 'pages/04-have';
