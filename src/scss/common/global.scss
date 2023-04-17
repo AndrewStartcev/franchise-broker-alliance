@@ -47,6 +47,10 @@ body {
 .main-page {
 	flex: 1;
 	overflow: hidden;
+	margin-top: 85px;
+	@include media-mobile-horizontal {
+		margin-top: 70px;
+	}
 }
 
 .container {

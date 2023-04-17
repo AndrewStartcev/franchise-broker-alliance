@@ -15,7 +15,7 @@
   \************************/
 /***/ (function() {
 
-eval("\n\n//# sourceURL=webpack://gulp-starter/./src/js/main.js?");
+eval("const burgerButton = document.querySelector('.header__burger');\r\nconst menu = document.querySelector('.header-menu');\r\n\r\nburgerButton.addEventListener('click', function () {\r\n  burgerButton.classList.toggle('active');\r\n  menu.classList.toggle('menu--active');\r\n});\r\n\n\n//# sourceURL=webpack://gulp-starter/./src/js/main.js?");
 
 /***/ })
 

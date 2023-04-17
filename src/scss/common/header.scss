@@ -1,0 +1,177 @@
+.header {
+	padding: 20px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 12;
+	background-color: #000;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 30px;
+	}
+	&__burger {
+		display: none;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 24px;
+		width: 30px;
+		z-index: 12;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		padding: 0;
+		span {
+			display: block;
+			height: 3px;
+			width: 100%;
+			background-color: #fff;
+			transition: all 0.3s ease-in-out;
+			border-radius: 10px;
+		}
+		&.active {
+			span:nth-child(1) {
+				transform: translateY(10px) rotate(45deg);
+			}
+			span:nth-child(2) {
+				opacity: 0;
+			}
+			span:nth-child(3) {
+				transform: translateY(-10px) rotate(-45deg);
+			}
+		}
+	}
+
+	&__logo {
+		position: relative;
+		z-index: 12;
+		img {
+			max-width: 213px;
+			object-fit: contain;
+		}
+	}
+}
+.header-menu {
+	&__container {
+	}
+
+	&__nav {
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 24px;
+	}
+}
+.menu-item {
+	a {
+		font-size: 16px;
+		line-height: 24px;
+		color: #ffffff;
+		&:hover {
+			color: #ffb51e;
+		}
+	}
+}
+
+@include media-tablet-horizontal {
+	.header {
+		padding: 15px 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 12;
+		background-color: #000;
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 30px;
+		}
+		&__burger {
+			display: flex;
+		}
+
+		&__logo {
+			img {
+				max-width: 213px;
+				object-fit: contain;
+			}
+		}
+		.phone {
+			margin-left: auto;
+			z-index: 12;
+		}
+	}
+	.header-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0;
+		background-color: #000;
+		overflow: hidden;
+		transition: all 0.3s ease;
+		z-index: 10;
+		text-align: center;
+		overflow-y: scroll;
+
+		&.menu--active {
+			height: 100%;
+			min-height: 100vh;
+			padding: 120px 0;
+		}
+		&__container {
+			overflow: auto;
+			height: auto;
+		}
+
+		&__nav {
+		}
+
+		&__list {
+			overflow: hidden;
+			flex-direction: column;
+			gap: 15px;
+		}
+	}
+}
+
+@include media-mobile-horizontal {
+	.header {
+		padding: 15px 0;
+		&__wrapper {
+			gap: 10px;
+		}
+		&__burger {
+			display: flex;
+		}
+
+		&__logo {
+			img {
+				max-width: 160px;
+			}
+		}
+		.phone {
+			margin-left: auto;
+			margin-right: 10px;
+			> a {
+				img {
+					width: 35px;
+					height: 35px;
+				}
+			}
+			&__content {
+				display: none;
+			}
+		}
+	}
+}
