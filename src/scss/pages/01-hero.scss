@@ -60,6 +60,9 @@
 		align-items: center;
 		gap: 40px;
 	}
+	&__list {
+		flex-wrap: wrap;
+	}
 
 	&__item {
 		display: flex;
