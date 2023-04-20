@@ -1,0 +1,243 @@
+.order-block {
+	margin-top: 150px;
+	background: #000000;
+	color: #fff;
+	min-height: 474px;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	&__content {
+		max-width: 685px;
+		h2 {
+			margin: 0;
+			margin-bottom: 20px;
+			line-height: 140%;
+			font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1200 - 320)));
+			@media (min-width: 1200px) {
+				font-size: 36px;
+			}
+			span {
+				color: #ffb51e;
+			}
+		}
+		p {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 150%;
+			padding: 0;
+			margin: 0;
+		}
+		.descr {
+			padding-top: 20px;
+			padding-left: 70px;
+			p {
+				margin-bottom: 15px;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+		.row {
+			display: flex;
+			justify-content: flex-start;
+			align-items: stretch;
+			gap: 40px;
+			ul {
+				min-width: 240px;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 10px;
+				li {
+					width: 100%;
+					display: flex;
+					justify-content: flex-start;
+					align-items: flex-start;
+					&::before {
+						content: '';
+						display: block;
+						flex: 0 0 8px;
+						width: 8px;
+						height: 8px;
+						transform: translateY(6px);
+						border-radius: 100%;
+						background: #ffb51e;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	&__form {
+		position: absolute;
+		right: 0;
+		bottom: 40px;
+		max-width: 380px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		.form {
+			background: #ffffff;
+			color: #19171a;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+			border-radius: 10px;
+			padding: 40px;
+			&__descr {
+				margin-bottom: 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				h3 {
+					width: 70%;
+					margin: 0;
+					margin-bottom: 15px;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 29px;
+					text-align: center;
+				}
+				p {
+					width: 80%;
+					margin: 0;
+					padding: 0;
+					font-weight: 400;
+					font-size: 12px;
+					line-height: 18px;
+					text-align: center;
+				}
+			}
+			input {
+				display: block;
+				margin: 15px 0;
+				width: 100%;
+				border: 1px solid rgba(25, 23, 26, 0.25);
+				border-radius: 5px;
+				padding: 10px;
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 18px;
+				&[type='submit'] {
+					position: relative;
+					cursor: pointer;
+					background: #19171a;
+					border: 1px solid #ffb51e;
+					color: #ffb51e;
+					text-align: center;
+					&:hover {
+						background: lighten(#19171a, 8);
+					}
+					&:active {
+						transform: scale(0.95);
+					}
+				}
+			}
+			p {
+				width: 80%;
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 18px;
+				color: #19171a;
+				a {
+					color: #ffb51e;
+				}
+			}
+		}
+		.email {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			font-size: 12px;
+			line-height: 18px;
+			a {
+				text-decoration: underline;
+				font-weight: 700;
+				color: #ffb51e;
+			}
+		}
+	}
+}
+
+@include media-tablet-horizontal {
+	.order-block {
+		margin-top: 120px 0 60px;
+		padding: 60px 0;
+		&__wrapper {
+			flex-direction: column;
+			gap: 40px;
+		}
+		&__form {
+			position: relative;
+			bottom: auto;
+			right: auto;
+		}
+	}
+}
+
+@include media-mobile-horizontal {
+	.order-block {
+		margin-top: 40px 0;
+		padding: 40px 0;
+		&__wrapper {
+			gap: 30px;
+		}
+
+		&__content {
+			max-width: 685px;
+			p {
+				font-size: 16px;
+			}
+			.descr {
+				padding-top: 15px;
+				padding-left: 00px;
+				p {
+					margin-bottom: 15px;
+					font-size: 14px;
+					line-height: 18px;
+				}
+			}
+			.row {
+				flex-direction: column;
+				gap: 10px;
+			}
+		}
+
+		&__form {
+			.form {
+				padding: 20px 15px;
+				&__descr {
+					margin-bottom: 20px;
+					h3 {
+						width: 100%;
+						font-size: 20px;
+						line-height: 22px;
+					}
+					p {
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+}

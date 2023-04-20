@@ -1,0 +1,254 @@
+.faq {
+	margin: 90px 0;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+	h2 {
+		flex: 1 1 100%;
+		margin: 0;
+		margin-bottom: 60px;
+		line-height: 140%;
+		font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1200 - 320)));
+		@media (min-width: 1200px) {
+			font-size: 36px;
+		}
+	}
+
+	&__accordions {
+		flex: 0 0 auto;
+		max-width: 687px;
+		width: 100%;
+	}
+
+	&__form {
+		flex: 0 0 auto;
+		max-width: 381px;
+		.form {
+			background: #000000;
+			color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+			border-radius: 10px;
+			padding: 40px;
+			&__descr {
+				margin-bottom: 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				h3 {
+					width: 90%;
+					margin: 0;
+					margin-bottom: 15px;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 29px;
+					text-align: center;
+				}
+			}
+			input {
+				display: block;
+				margin: 15px 0;
+				width: 100%;
+				border: 1px solid rgba(25, 23, 26, 0.25);
+				border-radius: 5px;
+				padding: 10px;
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 18px;
+				&[type='submit'] {
+					position: relative;
+					cursor: pointer;
+					background: #19171a;
+					border: 1px solid #ffb51e;
+					color: #ffb51e;
+					text-align: center;
+					&:hover {
+						background: lighten(#19171a, 8);
+					}
+					&:active {
+						transform: scale(0.95);
+					}
+				}
+			}
+			textarea {
+				resize: vertical;
+				display: block;
+				margin: 15px 0;
+				width: 100%;
+				border: 1px solid rgba(25, 23, 26, 0.25);
+				border-radius: 5px;
+				padding: 10px;
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 18px;
+			}
+			p {
+				width: 80%;
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 18px;
+				color: #fff;
+				a {
+					color: #ffb51e;
+				}
+			}
+		}
+	}
+}
+
+.accordion {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.accordion-item {
+	width: 100%;
+	background: #000000;
+	color: #fff;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	&.active {
+		.accordion-header::after {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.accordion-header {
+	cursor: pointer;
+	padding: 15px;
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+	&::before {
+		content: '';
+		display: block;
+		flex: 0 0 34px;
+		width: 34px;
+		height: 33px;
+		background: url('../img/help_icon.svg') center center / contain no-repeat;
+	}
+	span {
+		flex: 1 1 auto;
+	}
+	&::after {
+		content: '';
+		display: block;
+		flex: 0 0 24px;
+		width: 24px;
+		height: 24px;
+		background: url('../img/add_icon.svg') center center / contain no-repeat;
+		transition: transform 0.3s ease;
+	}
+}
+
+.accordion-body {
+	display: none;
+	padding: 5px 60px 15px;
+	p {
+		padding: 0;
+		margin: 0;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 24px;
+		color: #ffffff;
+		opacity: 0.9;
+	}
+}
+
+@include media-tablet-horizontal {
+	.faq {
+		margin: 60px 0;
+		&__wrapper {
+			align-items: center;
+			justify-content: center;
+		}
+		h2 {
+			flex: 1 1 auto;
+			margin: 0;
+			margin-bottom: 40px;
+		}
+
+		&__accordions {
+			flex: 0 0 auto;
+			max-width: 687px;
+			width: 100%;
+			margin-bottom: 40px;
+		}
+
+		&__form {
+			max-width: 100%;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			background: #000000;
+			color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+			border-radius: 10px;
+			padding: 40px;
+			.form {
+				width: 70%;
+				background: transparent;
+				box-shadow: none;
+				border-radius: 0;
+				padding: 0px;
+			}
+		}
+	}
+}
+
+@include media-mobile-horizontal {
+	.faq {
+		margin: 40px 0;
+		h2 {
+			margin-bottom: 20px;
+		}
+
+		&__accordions {
+			margin-bottom: 30px;
+		}
+
+		&__form {
+			padding: 20px 10px;
+			.form {
+				width: 100%;
+			}
+		}
+	}
+	.accordion-header {
+		cursor: pointer;
+		padding: 15px 10px;
+		&::before {
+			flex: 0 0 25px;
+			width: 25px;
+			height: 25px;
+		}
+		span {
+			flex: 1 1 auto;
+			font-size: 14px;
+		}
+		&::after {
+			flex: 0 0 20px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+	.accordion-body {
+		display: none;
+		padding: 5px 12px 15px;
+	}
+}

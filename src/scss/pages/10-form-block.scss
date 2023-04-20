@@ -1,0 +1,125 @@
+.form-section {
+	padding: 60px 0;
+	margin: 120px 0;
+	background: #000000;
+	color: #fff;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 66px;
+	}
+
+	&__content {
+		h2 {
+			margin: 0;
+			margin-bottom: 23px;
+			font-weight: 600;
+			line-height: 140%;
+			font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1200 - 320)));
+			@media (min-width: 1200px) {
+				font-size: 36px;
+			}
+			color: #ffb51e;
+		}
+		p {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 150%;
+		}
+		.info {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 20px;
+			p {
+				margin: 0;
+				padding: 0;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 24px;
+			}
+			&::before {
+				content: '';
+				display: block;
+				width: 52px;
+				height: 52px;
+				flex: 0 0 52px;
+				background: url('../img/new_releases.svg') center center / contain no-repeat;
+			}
+		}
+	}
+
+	&__form {
+		flex: 0 0 380px;
+		padding: 40px;
+		color: #19171a;
+		border-radius: 10px;
+		padding: 40px;
+		input {
+			display: block;
+			margin: 15px 0;
+			width: 100%;
+			border: 1px solid rgba(25, 23, 26, 0.25);
+			border-radius: 5px;
+			padding: 10px;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 18px;
+			&[type='submit'] {
+				position: relative;
+				cursor: pointer;
+				background: #ffb51e;
+				border: 1px solid #ffb51e;
+				color: #000;
+				text-align: center;
+				&:hover {
+					background: lighten(#ffb51e, 8);
+				}
+				&:active {
+					transform: scale(0.95);
+				}
+			}
+		}
+		p {
+			width: 80%;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 18px;
+			color: #fff;
+			a {
+				color: #ffb51e;
+			}
+		}
+	}
+}
+
+@include media-tablet-horizontal {
+	.form-section {
+		margin: 0;
+		&__wrapper {
+			flex-direction: column;
+			gap: 15px;
+		}
+
+		&__content {
+			p {
+				font-size: 16px;
+			}
+			.info {
+				display: none;
+			}
+		}
+
+		&__form {
+			flex: 0 0 auto;
+			padding: 15px;
+		}
+	}
+}
