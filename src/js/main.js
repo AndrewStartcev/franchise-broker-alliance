@@ -34,6 +34,9 @@ function activateTab(selectedTab) {
     }
   });
 }
+// Устанавливаем активный класс для первой кнопки и таба при загрузке страницы
+tabButtons[0].classList.add('active');
+tabs[0].classList.add('active');
 
 
 const accordionHeaders = document.querySelectorAll('.accordion-header');
